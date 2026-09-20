@@ -2,8 +2,10 @@
 using namespace std;
 
 int main(){
-    cout << "Пожалуйста, введите ваше имя (затем нажмите 'enter'):\n";
+    cout << "Пожалуйста, введите свое имя и возраст(затем нажмите 'enter'):\n";
     string first_name;
+    int age;
     cin >> first_name;
-    cout << "Hello, " << first_name << "!\n";
+    cin >> age;
+    cout << "Hello, " << first_name << " (age " << age << ")!\n";
 }
