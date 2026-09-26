@@ -1,9 +1,18 @@
 #include <iostream>
+#include <string>
+#include <sstream>
 
 int main(){
-    std::cout << "C++ is a general-purpose programming language with a bias towards systems programming that" << '\n';
-    std::cout << "  - is a better C" << '\n';
-    std::cout << "  - supports data abstraction" << '\n';
-    std::cout << "  - supports object-oriented programming" << '\n';
-    std::cout << "  - supports generic programming." << '\n';
+    std::string c;
+    std::getline(std::cin, c);
+
+    std::stringstream ss(c);
+    double number;
+    double sum = 0;
+
+    while (ss >> number){
+        sum += number;
+    }
+
+    std::cout << sum << "\n";
 }
