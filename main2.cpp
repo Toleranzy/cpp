@@ -1,13 +1,17 @@
 #include <iostream>
-#include <cmath>
+
 
 int main(){
-    int x1, y1, x2, y2;
-    std::cin >> x1 >> y1 >> x2 >> y2;
-
-    if (x1 == x2 || y1 == y2 || std::abs(x1 - x2) == std::abs(y1 - y2)) {
-        std::cout << "YES" << std::endl;
-    } else {
-        std::cout << "NO" << std::endl;
+    int a;
+    int b;
+    int c;
+    std::cin >> a >> b >> c;
+    if (a>=b+c || b>=c+a || c>=b+a){
+        std::cout <<"UNDEFINED";}
+    else if (a*a == (b*b + c*c) || b*b == (a*a + c*c) || c*c == (a*a + b*b)){
+        std::cout <<"YES";}
+    else{
+        std::cout <<"NO";
     }
+    
 }
