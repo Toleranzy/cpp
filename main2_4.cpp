@@ -17,7 +17,6 @@ int main() {
         });
 
     int value = 0;
-
     for (size_t i = 0; i != password.size(); ++i) {
         value = value + 1;
     }
@@ -41,19 +40,35 @@ int main() {
                     return c >= 48 && c <= 57;
                 });
 
+            bool is_other = std::any_of(password.begin(), password.end(),
+                [](unsigned char c) {
+                    return !(c >= 65 && c <= 90) &&
+                           !(c >= 97 && c <= 122) &&
+                           !(c >= 48 && c <= 57);
+                });
 
-            if (is_bigger && is_lower && is_number) {
-                std::cout << "Есть 3 или более разных символов." << std::endl;
-            }
 
-            std::cout << "Все символы входят в диапазон 33-126." << std::endl;
+            int classes = 0;
+
+            if (is_bigger) classes++;
+            if (is_lower) classes++;
+            if (is_number) classes++;
+            if (is_other) classes++;
+
+
+            if (classes >= 3)
+                std::cout << "YES";
+            else
+                std::cout << "NO";
+
         }
         else {
-            std::cout << "Есть символы вне диапазона!" << std::endl;
+            std::cout << "NO";
         }
+
     }
     else {
-        std::cout << "Пароль не содержит нужного числа символов\n";
+        std::cout << "NO";
     }
 
     return 0;
