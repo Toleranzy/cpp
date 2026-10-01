@@ -14,10 +14,19 @@ int main(){
         return c >= 33 && c <= 126;
     });
 
-    if (is_valid) {
+    int value = 0;
+    for (size_t i = 0;i != password.size(); ++i){
+        value=value+1;
+    }
+    if (value>=8 and value<=14){
+        if (is_valid) {
         std::cout << "Все символы входят в диапазон 33-126." << std::endl;
     } 
     else {
         std::cout << "Есть символы вне диапазона!" << std::endl;
+    }}
+    else{
+        std::cout << "пароль не содержит нужного числа символов",'\n';
     }
+    
 }
